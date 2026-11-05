@@ -1,5 +1,5 @@
 // Service worker ringkas: cache-first untuk aset statik, network-first untuk halaman.
-const CACHE = "pwastudio-v1";
+const CACHE = "pwastudio-v2";
 const ASSETS = ["./", "index.html", "styles.css", "script.js", "projects.js", "manifest.webmanifest", "icons/icon.svg"];
 
 self.addEventListener("install", (e) => {
