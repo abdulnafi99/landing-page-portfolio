@@ -1,5 +1,5 @@
 // Minimal service worker: cache-first for static assets, network-first for pages.
-const CACHE = "pwastudio-v4";
+const CACHE = "pwastudio-v5";
 const ASSETS = ["./", "index.html", "styles.css", "script.js", "projects.js", "manifest.webmanifest", "icons/icon.svg"];
 
 self.addEventListener("install", (e) => {
