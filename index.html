@@ -1,199 +1,234 @@
 <!doctype html>
-<html lang="ms">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nafi | PwaStudio — Portfolio Pembangunan Aplikasi &amp; PWA</title>
-  <meta name="description" content="Portfolio Nafi (PwaStudio): Progressive Web Apps dan aplikasi web moden untuk perniagaan kecil, komuniti tempatan dan kehidupan seharian." />
-  <meta name="theme-color" content="#4338ca" />
+  <title>Nafi | PwaStudio — App &amp; PWA Development Portfolio</title>
+  <meta name="description" content="Nafi (PwaStudio) builds Progressive Web Apps and modern web apps for small businesses, local communities and everyday life." />
+  <meta name="theme-color" content="#f5f5f2" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0b0b0e" media="(prefers-color-scheme: dark)" />
   <meta property="og:title" content="Nafi | PwaStudio" />
-  <meta property="og:description" content="Membangunkan aplikasi web moden untuk perniagaan, komuniti dan kehidupan seharian." />
+  <meta property="og:description" content="Building modern web apps for business, community and everyday life." />
   <meta property="og:type" content="website" />
   <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="icons/icon.svg" />
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script>
+    try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (_) {}
+  </script>
 </head>
 <body>
-  <a class="skip" href="#utama">Langkau ke kandungan</a>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="progress" id="progress" aria-hidden="true"></div>
 
   <header class="nav" id="nav">
     <div class="container nav__inner">
-      <a href="#" class="brand" aria-label="PwaStudio — laman utama">
+      <a href="#top" class="brand" aria-label="PwaStudio — home">
         <span class="brand__mark" aria-hidden="true">P</span>
         <span>Pwa<strong>Studio</strong></span>
       </a>
-      <nav class="nav__links" id="navLinks" aria-label="Navigasi utama">
-        <a href="#tentang">Tentang</a>
-        <a href="#kemahiran">Kemahiran</a>
-        <a href="#projek">Projek</a>
-        <a href="#hala-tuju">Hala Tuju</a>
-        <a href="#hubungi" class="btn btn--sm">Hubungi</a>
+      <nav class="nav__links" id="navLinks" aria-label="Main">
+        <a href="#about" data-nav>About</a>
+        <a href="#work" data-nav>Work</a>
+        <a href="#focus" data-nav>Focus</a>
+        <a href="#contact" data-nav>Contact</a>
+        <span class="nav__pill" aria-hidden="true"></span>
       </nav>
       <div class="nav__actions">
-        <button class="icon-btn" id="themeToggle" type="button" aria-label="Tukar tema">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle colour theme">
           <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
           <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
         </button>
-        <button class="icon-btn nav__burger" id="menuToggle" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="navLinks">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <button class="icon-btn nav__burger" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
         </button>
       </div>
     </div>
   </header>
 
-  <main id="utama">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero__inner">
-        <p class="eyebrow">Portfolio Pembangunan Aplikasi &amp; PWA</p>
-        <h1>Nafi <span class="muted">|</span> <span class="grad">PwaStudio</span></h1>
-        <p class="hero__lead">Membangunkan aplikasi web moden untuk perniagaan, komuniti dan kehidupan seharian.</p>
-        <div class="hero__cta">
-          <a href="#projek" class="btn">Lihat Projek</a>
-          <a href="#hubungi" class="btn btn--ghost">Bincang Projek Anda</a>
-        </div>
-        <ul class="stats" aria-label="Ringkasan">
-          <li><strong id="statProjects">15</strong><span>Projek &amp; konsep</span></li>
-          <li><strong>3</strong><span>Bidang tumpuan</span></li>
-          <li><strong>100%</strong><span>Mesra telefon pintar</span></li>
-        </ul>
-      </div>
-      <div class="hero__glow" aria-hidden="true"></div>
-    </section>
-
-    <!-- TENTANG -->
-    <section class="section" id="tentang">
-      <div class="container about">
-        <div>
-          <p class="eyebrow">Tentang Saya</p>
-          <h2>Penyelesaian digital yang praktikal, bukan sekadar cantik.</h2>
-        </div>
-        <div class="about__text">
-          <p>Saya membangunkan <strong>Progressive Web Apps (PWA)</strong> dan aplikasi web menggunakan teknologi web moden dengan fokus pada pengalaman pengguna, reka bentuk responsif dan penyelesaian digital yang praktikal.</p>
-          <p>Saya memberi tumpuan kepada pembangunan aplikasi yang boleh digunakan melalui telefon pintar, tablet dan komputer, khususnya untuk membantu <strong>perniagaan kecil</strong> mengurus operasi serta memperkenalkan perkhidmatan mereka secara digital.</p>
-          <ul class="devices" aria-label="Peranti disokong">
-            <li>📱 Telefon pintar</li>
-            <li>💻 Komputer</li>
-            <li>📲 Tablet</li>
-            <li>⚡ Boleh dipasang (PWA)</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- KEMAHIRAN -->
-    <section class="section section--alt" id="kemahiran">
-      <div class="container">
-        <p class="eyebrow">Kemahiran &amp; Teknologi</p>
-        <h2>Alat yang saya gunakan setiap hari</h2>
-        <div class="skills">
-          <div class="skill-group">
-            <h3>Frontend</h3>
-            <ul class="chips">
-              <li>HTML5</li><li>Vanilla CSS</li><li>Vanilla JavaScript</li><li>Progressive Web App (PWA)</li><li>Reka bentuk UI/UX responsif</li>
-            </ul>
+  <main id="main">
+    <!-- ================= HERO BENTO ================= -->
+    <section class="section section--hero" id="top">
+      <div class="container bento bento--hero">
+        <article class="tile tile--intro" data-reveal>
+          <p class="eyebrow"><span class="dot"></span> App &amp; PWA Development Portfolio</p>
+          <h1>Hi, I'm Nafi.<br />I build <em>web apps</em> that work for real businesses.</h1>
+          <p class="lead">PwaStudio builds modern web apps for business, community and everyday life — fast, mobile-first and installable as PWAs.</p>
+          <div class="actions">
+            <a href="#work" class="btn btn--primary">See my work <span aria-hidden="true">→</span></a>
+            <a href="#contact" class="btn btn--ghost">Start a project</a>
           </div>
-          <div class="skill-group">
-            <h3>Backend &amp; Data</h3>
-            <ul class="chips">
-              <li>Firebase Authentication</li><li>Firebase Realtime Database</li><li>Cloud Firestore</li><li>Firebase Storage</li><li>LocalStorage (prototaip &amp; data setempat)</li>
-            </ul>
-          </div>
-          <div class="skill-group">
-            <h3>Hosting &amp; Integrasi</h3>
-            <ul class="chips">
-              <li>Vercel</li><li>Netlify</li><li>Integrasi WhatsApp — pertanyaan, tempahan &amp; komunikasi pelanggan</li>
-            </ul>
-          </div>
-          <div class="skill-group">
-            <h3>Pendekatan</h3>
-            <ul class="chips">
-              <li>AI-assisted development</li><li>Vibe coding</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+        </article>
 
-    <!-- PROJEK -->
-    <section class="section" id="projek">
-      <div class="container">
-        <p class="eyebrow">Projek</p>
-        <h2>Projek &amp; konsep aplikasi</h2>
-        <p class="section__lead">Daripada platform yang sudah dalam talian hingga konsep yang sedang diteroka — setiap satu bermula daripada masalah sebenar perniagaan dan komuniti tempatan.</p>
-
-        <div class="filters" role="toolbar" aria-label="Tapis projek">
-          <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">Semua</button>
-          <button type="button" class="filter" data-filter="business" aria-pressed="false">Aplikasi Perniagaan</button>
-          <button type="button" class="filter" data-filter="community" aria-pressed="false">Komuniti Tempatan</button>
-          <button type="button" class="filter" data-filter="utility" aria-pressed="false">Utiliti &amp; Interaktif</button>
-        </div>
-
-        <div class="legend" aria-label="Petunjuk status">
-          <span class="status status--live">Dalam talian</span>
-          <span class="status status--built">Dibangunkan</span>
-          <span class="status status--planned">Dirancang</span>
-          <span class="status status--concept">Konsep</span>
-        </div>
-
-        <div class="projects" id="projectGrid" aria-live="polite"></div>
-        <noscript><p>Sila aktifkan JavaScript untuk melihat senarai projek.</p></noscript>
-      </div>
-    </section>
-
-    <!-- HALA TUJU -->
-    <section class="section section--alt" id="hala-tuju">
-      <div class="container">
-        <p class="eyebrow">Hala Tuju Pembangunan</p>
-        <h2>Tiga bidang tumpuan utama</h2>
-        <div class="focus">
-          <article class="focus__card">
-            <span class="focus__num">1</span>
-            <h3>Business Applications</h3>
-            <ul><li>Sistem POS</li><li>Pengurusan jualan</li><li>Pengurusan inventori</li><li>Sistem tempahan</li><li>Sistem keahlian dan ganjaran</li></ul>
-          </article>
-          <article class="focus__card">
-            <span class="focus__num">2</span>
-            <h3>Local Community Applications</h3>
-            <ul><li>Direktori makanan</li><li>Direktori perniagaan tempatan</li><li>Aplikasi pelancongan</li><li>Platform komuniti</li></ul>
-          </article>
-          <article class="focus__card">
-            <span class="focus__num">3</span>
-            <h3>Utility &amp; Interactive Applications</h3>
-            <ul><li>Aplikasi peringatan</li><li>Aplikasi pendidikan</li><li>Permainan interaktif</li><li>Aplikasi pengurusan harian</li></ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- VISI -->
-    <section class="section vision">
-      <div class="container vision__inner">
-        <p class="eyebrow">Visi PwaStudio</p>
-        <blockquote>
-          <p>Membantu perniagaan kecil dan komuniti tempatan mendapatkan penyelesaian digital yang <em>praktikal, moden dan mampu milik</em>.</p>
-        </blockquote>
-        <p class="vision__body">Saya percaya aplikasi yang baik bukan sekadar mempunyai reka bentuk yang menarik, tetapi perlu menyelesaikan masalah sebenar, mudah digunakan dan sesuai dengan kemampuan pengguna.</p>
-      </div>
-    </section>
-
-    <!-- HUBUNGI -->
-    <section class="section" id="hubungi">
-      <div class="container">
-        <div class="cta">
+        <a class="tile tile--live" href="https://dapurkita2026.vercel.app/" target="_blank" rel="noopener" data-reveal>
+          <span class="badge badge--live">Live now</span>
+          <div class="live__icon" aria-hidden="true">🍛</div>
           <div>
-            <h2>Ada idea aplikasi untuk perniagaan anda?</h2>
-            <p>Sistem tempahan, keahlian, POS, katalog atau direktori — mari bincang penyelesaian yang sesuai dengan keperluan dan bajet anda.</p>
+            <h2 class="tile__title">Dapur Kita</h2>
+            <p class="muted">Local food directory for Taiping &amp; surroundings</p>
           </div>
-          <div class="cta__actions" id="ctaActions">
-            <a class="btn btn--light" id="waButton" href="#" target="_blank" rel="noopener" hidden>💬 WhatsApp Saya</a>
-            <a class="btn btn--outline-light" href="https://dapurkita2026.vercel.app/" target="_blank" rel="noopener">Lihat Dapur Kita ↗</a>
+          <span class="tile__arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <article class="tile tile--stats" data-reveal>
+          <div class="stat"><strong data-count="15">15</strong><span>projects &amp; concepts</span></div>
+          <div class="stat"><strong data-count="3">3</strong><span>focus areas</span></div>
+          <div class="stat"><strong data-count="100" data-suffix="%">100%</strong><span>mobile-first</span></div>
+        </article>
+
+        <article class="tile tile--stack" data-reveal>
+          <p class="tile__label">Stack</p>
+          <div class="marquee" aria-label="Technologies">
+            <ul class="marquee__track">
+              <li>HTML5</li><li>Vanilla CSS</li><li>Vanilla JS</li><li>PWA</li><li>Firebase Auth</li><li>Firestore</li><li>Realtime DB</li><li>Firebase Storage</li><li>Vercel</li><li>Netlify</li><li>WhatsApp API</li>
+            </ul>
+            <ul class="marquee__track" aria-hidden="true">
+              <li>HTML5</li><li>Vanilla CSS</li><li>Vanilla JS</li><li>PWA</li><li>Firebase Auth</li><li>Firestore</li><li>Realtime DB</li><li>Firebase Storage</li><li>Vercel</li><li>Netlify</li><li>WhatsApp API</li>
+            </ul>
           </div>
+        </article>
+
+        <article class="tile tile--location" data-reveal>
+          <p class="tile__label">Based in</p>
+          <h2 class="tile__title">Taiping, Perak 🇲🇾</h2>
+          <p class="muted">Serving small businesses across Taiping, Kamunting, Batu Kurau &amp; Selama.</p>
+        </article>
+
+        <a class="tile tile--cta" href="#contact" data-reveal>
+          <p class="tile__label">Open for work</p>
+          <h2 class="tile__title">Have an app idea?</h2>
+          <span class="tile__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT BENTO ================= -->
+    <section class="section" id="about">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow">About &amp; Skills</p>
+          <h2>Practical digital solutions — <em>not just pretty screens.</em></h2>
+        </header>
+
+        <div class="bento bento--about">
+          <article class="tile tile--about" data-reveal>
+            <p>I build <strong>Progressive Web Apps</strong> and web applications with modern web technology, focusing on user experience, responsive design and practical digital solutions.</p>
+            <p class="muted">My apps run on phones, tablets and computers — built especially to help <strong>small businesses</strong> run their operations and showcase their services online.</p>
+          </article>
+
+          <article class="tile tile--devices" data-reveal>
+            <p class="tile__label">Works everywhere</p>
+            <ul class="device-list">
+              <li><span aria-hidden="true">📱</span> Phone</li>
+              <li><span aria-hidden="true">📲</span> Tablet</li>
+              <li><span aria-hidden="true">💻</span> Desktop</li>
+              <li><span aria-hidden="true">⚡</span> Installable PWA</li>
+            </ul>
+          </article>
+
+          <article class="tile tile--skill" data-reveal>
+            <span class="tile__icon" aria-hidden="true">🎨</span>
+            <h3>Frontend</h3>
+            <ul class="chips"><li>HTML5</li><li>Vanilla CSS</li><li>Vanilla JavaScript</li><li>PWA</li><li>Responsive UI/UX</li></ul>
+          </article>
+
+          <article class="tile tile--skill" data-reveal>
+            <span class="tile__icon" aria-hidden="true">🔥</span>
+            <h3>Backend &amp; Data</h3>
+            <ul class="chips"><li>Firebase Auth</li><li>Realtime Database</li><li>Cloud Firestore</li><li>Firebase Storage</li><li>LocalStorage</li></ul>
+          </article>
+
+          <article class="tile tile--skill" data-reveal>
+            <span class="tile__icon" aria-hidden="true">🚀</span>
+            <h3>Hosting &amp; Integrations</h3>
+            <ul class="chips"><li>Vercel</li><li>Netlify</li><li>WhatsApp enquiries, bookings &amp; customer chat</li></ul>
+          </article>
+
+          <article class="tile tile--approach" data-reveal>
+            <span class="tile__icon" aria-hidden="true">✨</span>
+            <h3>How I build</h3>
+            <p class="muted">AI-assisted development and vibe coding — shipping working prototypes fast, then refining them with real users.</p>
+          </article>
         </div>
+      </div>
+    </section>
+
+    <!-- ================= WORK BENTO ================= -->
+    <section class="section" id="work">
+      <div class="container">
+        <header class="section__head section__head--row" data-reveal>
+          <div>
+            <p class="eyebrow">Selected Work</p>
+            <h2>Projects &amp; <em>concepts</em></h2>
+          </div>
+          <div class="filters" role="toolbar" aria-label="Filter projects">
+            <span class="filters__pill" aria-hidden="true"></span>
+            <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" class="filter" data-filter="business" aria-pressed="false">Business</button>
+            <button type="button" class="filter" data-filter="community" aria-pressed="false">Community</button>
+            <button type="button" class="filter" data-filter="utility" aria-pressed="false">Utility &amp; Play</button>
+          </div>
+        </header>
+
+        <div class="legend" data-reveal>
+          <span class="badge badge--live">Live</span>
+          <span class="badge badge--built">Built</span>
+          <span class="badge badge--planned">In planning</span>
+          <span class="badge badge--concept">Concept</span>
+        </div>
+
+        <div class="bento bento--work" id="projectGrid"></div>
+        <noscript><p>Please enable JavaScript to view the projects.</p></noscript>
+      </div>
+    </section>
+
+    <!-- ================= FOCUS BENTO ================= -->
+    <section class="section" id="focus">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow">Where I'm heading</p>
+          <h2>Three areas of <em>focus</em></h2>
+        </header>
+        <div class="bento bento--focus">
+          <article class="tile tile--focus" data-reveal>
+            <span class="focus__num">01</span>
+            <h3>Business Applications</h3>
+            <ul><li>POS systems</li><li>Sales management</li><li>Inventory management</li><li>Booking systems</li><li>Membership &amp; rewards</li></ul>
+          </article>
+          <article class="tile tile--focus" data-reveal>
+            <span class="focus__num">02</span>
+            <h3>Local Community Apps</h3>
+            <ul><li>Food directories</li><li>Local business directories</li><li>Tourism apps</li><li>Community platforms</li></ul>
+          </article>
+          <article class="tile tile--focus" data-reveal>
+            <span class="focus__num">03</span>
+            <h3>Utility &amp; Interactive</h3>
+            <ul><li>Reminder apps</li><li>Educational apps</li><li>Interactive games</li><li>Everyday management tools</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= VISION + CONTACT BENTO ================= -->
+    <section class="section" id="contact">
+      <div class="container bento bento--contact">
+        <article class="tile tile--vision" data-reveal>
+          <p class="eyebrow">The PwaStudio vision</p>
+          <blockquote>Helping small businesses and local communities get digital solutions that are <em>practical, modern and affordable.</em></blockquote>
+          <p class="muted">A good app isn't just about looking good — it has to solve real problems, be easy to use and fit what its users can afford.</p>
+        </article>
+        <article class="tile tile--contact" data-reveal>
+          <h2>Let's build your app.</h2>
+          <p>Booking systems, memberships, POS, catalogues or directories — let's find the right solution for your needs and budget.</p>
+          <div class="actions">
+            <a class="btn btn--light" id="waButton" href="#" target="_blank" rel="noopener" hidden>💬 Chat on WhatsApp</a>
+            <a class="btn btn--outline-light" href="https://dapurkita2026.vercel.app/" target="_blank" rel="noopener">Visit Dapur Kita ↗</a>
+          </div>
+        </article>
       </div>
     </section>
   </main>
@@ -201,9 +236,14 @@
   <footer class="footer">
     <div class="container footer__inner">
       <p><strong>PwaStudio</strong> — Digital Solutions for Everyday Business.</p>
-      <p class="muted">© <span id="year">2026</span> Nafi. Taiping, Perak.</p>
+      <p class="muted">© <span id="year">2026</span> Nafi · Taiping, Perak</p>
     </div>
   </footer>
+
+  <!-- Project detail dialog -->
+  <dialog class="modal" id="projectModal" aria-labelledby="modalTitle">
+    <div class="modal__inner" id="modalBody"></div>
+  </dialog>
 
   <script src="projects.js"></script>
   <script src="script.js"></script>
