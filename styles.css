@@ -184,7 +184,7 @@ em { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-w
 .section__head { margin-bottom: 1.6rem; display: grid; gap: .75rem; }
 .section__head h2 { font-size: clamp(2rem, 5vw, 3.4rem); max-width: 22ch; }
 .section__head em { color: var(--accent); }
-.section__head--row { grid-template-columns: 1fr auto; align-items: end; gap: 1.25rem; }
+.section__head--row { grid-template-columns: 1fr auto; align-items: end; gap: 1.25rem; margin-bottom: 1.6rem; }
 @media (max-width: 860px) { .section__head--row { grid-template-columns: 1fr; } }
 
 /* ---------- Bento & tiles ---------- */
@@ -362,6 +362,10 @@ a.tile--cta:hover .tile__arrow { background: #fff; color: var(--accent); }
 .badge--built { color: var(--built); background: var(--built-bg); }
 .badge--planned { color: var(--planned); background: var(--planned-bg); }
 .badge--concept { color: var(--concept); background: var(--concept-bg); }
+.badge--new { color: #fff; background: linear-gradient(135deg, var(--accent), var(--accent-2)); }
+.badge--new::before { display: none; }
+.project__head .badge--new { margin-left: auto; }
+.project__head .badge--new + .badge { margin-left: 0; }
 @keyframes blink { 50% { opacity: .25; } }
 
 /* ---------- Work bento ---------- */

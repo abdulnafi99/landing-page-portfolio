@@ -73,7 +73,9 @@ $("#themeToggle").addEventListener("click", () => {
 })();
 
 /* ---------- Project tiles ---------- */
-function projectTile(p) {
+function projectTile(p, i) {
+  const no = String(i + 1).padStart(2, "0");
+  const newBadge = p.isNew ? `<span class="badge badge--new">New</span>` : "";
   const tags = (p.tags || []).slice(0, p.size ? 3 : 2).map((t) => `<span>${esc(t)}</span>`).join("");
   const preview =
     (p.size === "xl" || p.size === "tall") && p.features
@@ -82,7 +84,8 @@ function projectTile(p) {
   return `
     <button type="button" class="tile tile--project${p.size ? " size-" + p.size : ""}" data-id="${esc(p.id)}" data-group="${esc(p.group)}" data-reveal aria-haspopup="dialog">
       <span class="project__head">
-        <span class="project__no">${esc(p.no)}</span>
+        <span class="project__no">${no}</span>
+        ${newBadge}
         <span class="badge badge--${esc(p.status)}">${STATUS_LABEL[p.status]}</span>
       </span>
       <span class="project__icon" aria-hidden="true">${p.icon || "✨"}</span>
@@ -106,7 +109,7 @@ function modalContent(p) {
     <div class="modal__head">
       <span class="project__icon" aria-hidden="true">${p.icon || "✨"}</span>
       <div>
-        <span class="badge badge--${esc(p.status)}">${STATUS_LABEL[p.status]}</span>
+        <span class="badge badge--${esc(p.status)}">${STATUS_LABEL[p.status]}</span>${p.isNew ? ` <span class="badge badge--new">New</span>` : ""}
         <h2 id="modalTitle">${esc(p.title)}</h2>
         <p class="modal__sub">${esc(p.subtitle)}</p>
       </div>
@@ -263,7 +266,7 @@ if (matchMedia("(hover: hover)").matches) {
   }
   $("#year").textContent = new Date().getFullYear();
   const n = (window.PROJECTS || []).length;
-  const stat = $('[data-count="15"]');
+  const stat = $("[data-count-projects]");
   if (stat && n) stat.dataset.count = n;
 })();
 
