@@ -1,13 +1,13 @@
 {
   "name": "Nafi | PwaStudio",
   "short_name": "PwaStudio",
-  "description": "Portfolio pembangunan aplikasi & PWA oleh Nafi.",
-  "lang": "ms",
+  "description": "App & PWA development portfolio by Nafi.",
+  "lang": "en",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#f8f8fc",
-  "theme_color": "#4338ca",
+  "background_color": "#f5f5f2",
+  "theme_color": "#5b4bff",
   "icons": [
     { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
   ]

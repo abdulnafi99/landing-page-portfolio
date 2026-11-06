@@ -1,31 +1,29 @@
 # Nafi | PwaStudio — Portfolio
 
-Landing page portfolio untuk pembangunan aplikasi web & PWA. Dibina dengan HTML, Vanilla CSS dan Vanilla JavaScript — tiada build step.
+Bento-style portfolio for app & PWA development. Plain HTML, vanilla CSS and vanilla JavaScript — no build step.
 
-## Struktur
+## Files
 
-| Fail | Kegunaan |
+| File | Purpose |
 | --- | --- |
-| `index.html` | Struktur halaman (hero, tentang, kemahiran, projek, hala tuju, visi, hubungi) |
-| `projects.js` | **Data projek** — tambah/ubah projek di sini |
-| `script.js` | Render kad projek, penapis, tema gelap/cerah, menu mudah alih, `CONFIG` WhatsApp |
-| `styles.css` | Gaya & tema |
-| `manifest.webmanifest`, `sw.js`, `icons/` | Sokongan PWA (boleh dipasang & luar talian) |
+| `index.html` | Page structure: hero, about & skills, work, focus areas, vision & contact (all bento grids) |
+| `projects.js` | **Project data.** Add or edit projects here; `size` (`xl`, `wide`, `tall`) sets the tile size |
+| `script.js` | Project tiles, filter animation, detail dialog, scroll-spy nav, theme toggle, `CONFIG` for WhatsApp |
+| `styles.css` | Styles, light/dark theme tokens |
+| `manifest.webmanifest`, `sw.js`, `icons/` | PWA support (installable, offline) |
 
-## Konfigurasi
+## Config
 
-Buka `script.js` dan isi `CONFIG.whatsappNumber` (cth. `"60123456789"`) untuk memaparkan butang WhatsApp di bahagian Hubungi.
+Set `CONFIG.whatsappNumber` in `script.js` (e.g. `"60123456789"`) to show the WhatsApp button in the contact tile.
 
-Bila mengubah aset, naikkan versi `CACHE` dalam `sw.js` supaya pelawat mendapat versi terbaru.
+When you change assets, bump `CACHE` in `sw.js` so returning visitors get the new version.
 
-## Jalankan secara setempat
+## Run locally
 
 ```bash
-npx serve .
-# atau
 python3 -m http.server 8000
 ```
 
 ## Deploy
 
-Folder ini boleh terus di-deploy ke **Vercel** atau **Netlify** sebagai laman statik (tiada build command, output directory = root).
+Connected to Vercel: every push to `main` deploys to production; other branches get preview URLs.
