@@ -2,7 +2,7 @@
 const CONFIG = {
   // WhatsApp number in international format, no "+" or dashes, e.g. "60123456789".
   // Leave empty to hide the WhatsApp button.
-  whatsappNumber: "",
+  whatsappNumber: "60196971080",
   whatsappMessage: "Hi Nafi, I'd like to discuss an app project with PwaStudio.",
 };
 
