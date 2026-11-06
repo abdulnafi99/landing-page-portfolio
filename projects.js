@@ -59,6 +59,7 @@ window.PROJECTS = [
       "Mobile-first, installable PWA",
     ],
     objective: "Help local homestay owners reach more guests without building their own website.",
+    link: "https://homestaykita.vercel.app/",
   },
   {
     id: "selagi-loyalty",
@@ -165,6 +166,7 @@ window.PROJECTS = [
       "Service warranty information",
       "Mobile-first design",
     ],
+    link: "https://landingpagerepair.vercel.app/",
   },
   {
     id: "eventplanerperak",
@@ -213,5 +215,6 @@ window.PROJECTS = [
       "For locals and visitors",
     ],
     objective: "Make Taiping easier to explore and support local businesses.",
+    link: "https://taiping-local-explorer.vercel.app/",
   },
 ];
