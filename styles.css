@@ -274,6 +274,9 @@ a.tile.tile--live:hover .tile__arrow { transform: rotate(0) scale(1.08); }
   white-space: nowrap; padding: .55rem 1rem; border-radius: 999px;
   background: var(--tile-2); border: 1px solid var(--border); font-size: .9rem; font-weight: 500;
 }
+.marquee__track li { display: inline-flex; align-items: center; gap: .5rem; }
+.chip__logo { width: 18px; height: 18px; flex-shrink: 0; fill: var(--brand); transition: transform .4s var(--ease); }
+.marquee__track li:hover .chip__logo { transform: scale(1.18) rotate(-6deg); }
 @keyframes marquee { to { transform: translateX(calc(-100% - .5rem)); } }
 
 .tile--location { grid-area: loc; }
