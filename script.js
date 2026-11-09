@@ -395,6 +395,18 @@ if (matchMedia("(hover: hover)").matches) {
   b.innerHTML = rev.map((s) => card(s, true)).join("").repeat(2);
 })();
 
+/* ---------- Brand logos on the hero stack chips ---------- */
+(function stackLogos() {
+  const byName = new Map((window.SKILLS || []).map((sk) => [sk.name, sk]));
+  $$(".marquee__track li[data-icon]").forEach((li) => {
+    const sk = byName.get(li.dataset.icon);
+    if (!sk) return;
+    const mono = sk.color === "currentColor";
+    li.insertAdjacentHTML("afterbegin",
+      `<svg class="chip__logo" viewBox="0 0 24 24" aria-hidden="true" style="--brand:${mono ? "var(--text)" : esc(sk.color)}"><path d="${esc(sk.path)}"/></svg>`);
+  });
+})();
+
 /* ---------- Typing code editor ---------- */
 (function code() {
   const el = $("#codeTyping");
