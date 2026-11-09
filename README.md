@@ -7,7 +7,8 @@ Bento-style portfolio for app & PWA development. Plain HTML, vanilla CSS and van
 | File | Purpose |
 | --- | --- |
 | `index.html` | Page structure: hero, about & skills, work, focus areas, vision & contact (all bento grids) |
-| `projects.js` | **Project data.** Add or edit projects here; `size` (`xl`, `wide`, `tall`) sets the tile size |
+| `projects.js` | **Project data.** Add or edit projects here; `size` (`xl`, `wide`, `tall`) sets the tile size; apps with a `link` appear in the live phone carousel |
+| `skills.js` | **Skills carousel data** — name, brand colour, proficiency `level` (edit to your own rating) and icon path |
 | `script.js` | Project tiles, filter animation, detail dialog, scroll-spy nav, theme toggle, `CONFIG` for WhatsApp |
 | `styles.css` | Styles, light/dark theme tokens |
 | `manifest.webmanifest`, `sw.js`, `icons/` | PWA support (installable, offline) |

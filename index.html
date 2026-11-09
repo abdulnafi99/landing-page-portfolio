@@ -15,7 +15,7 @@
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <script>
     try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (_) {}
@@ -32,9 +32,10 @@
         <span>Pwa<strong>Studio</strong></span>
       </a>
       <nav class="nav__links" id="navLinks" aria-label="Main">
+        <a href="#live" data-nav>Live</a>
         <a href="#about" data-nav>About</a>
+        <a href="#skills" data-nav>Skills</a>
         <a href="#work" data-nav>Work</a>
-        <a href="#focus" data-nav>Focus</a>
         <a href="#contact" data-nav>Contact</a>
         <span class="nav__pill" aria-hidden="true"></span>
       </nav>
@@ -106,11 +107,37 @@
       </div>
     </section>
 
+    <!-- ================= LIVE PREVIEW CAROUSEL ================= -->
+    <section class="section section--live" id="live" aria-roledescription="carousel" aria-label="Live app previews">
+      <div class="container">
+        <header class="section__head section__head--row" data-reveal>
+          <div>
+            <p class="eyebrow"><span class="dot"></span> Running right now</p>
+            <h2>See my apps <em>live</em></h2>
+          </div>
+          <div class="carousel__controls">
+            <button type="button" class="icon-btn" data-carousel-prev aria-label="Previous app">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button type="button" class="icon-btn" data-carousel-next aria-label="Next app">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </header>
+      </div>
+      <div class="carousel" data-reveal>
+        <ul class="carousel__track" id="liveTrack" tabindex="0" aria-live="polite"></ul>
+      </div>
+      <div class="container">
+        <div class="carousel__dots" id="liveDots" role="tablist" aria-label="Choose an app"></div>
+      </div>
+    </section>
+
     <!-- ================= ABOUT BENTO ================= -->
     <section class="section" id="about">
       <div class="container">
         <header class="section__head" data-reveal>
-          <p class="eyebrow">About &amp; Skills</p>
+          <p class="eyebrow">About</p>
           <h2>Practical digital solutions — <em>not just pretty screens.</em></h2>
         </header>
 
@@ -129,31 +156,40 @@
               <li><span aria-hidden="true">⚡</span> Installable PWA</li>
             </ul>
           </article>
+        </div>
+      </div>
+    </section>
 
-          <article class="tile tile--skill" data-reveal>
-            <span class="tile__icon" aria-hidden="true">🎨</span>
-            <h3>Frontend</h3>
-            <ul class="chips"><li>HTML5</li><li>Vanilla CSS</li><li>Vanilla JavaScript</li><li>PWA</li><li>Responsive UI/UX</li></ul>
-          </article>
+    <!-- ================= SKILLS ================= -->
+    <section class="section" id="skills">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow">My Skills</p>
+          <h2>Tools I use to <em>ship real apps</em></h2>
+        </header>
 
-          <article class="tile tile--skill" data-reveal>
-            <span class="tile__icon" aria-hidden="true">🔥</span>
-            <h3>Backend &amp; Data</h3>
-            <ul class="chips"><li>Firebase Auth</li><li>Realtime Database</li><li>Cloud Firestore</li><li>Firebase Storage</li><li>LocalStorage</li></ul>
-          </article>
-
-          <article class="tile tile--skill" data-reveal>
-            <span class="tile__icon" aria-hidden="true">🚀</span>
-            <h3>Hosting &amp; Integrations</h3>
-            <ul class="chips"><li>Vercel</li><li>Netlify</li><li>WhatsApp enquiries, bookings &amp; customer chat</li></ul>
+        <div class="bento bento--skills">
+          <article class="tile tile--code" data-reveal>
+            <div class="code__bar">
+              <span class="code__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="code__file">pwastudio.js</span>
+              <button type="button" class="code__replay" id="codeReplay" aria-label="Replay typing animation">↻ Replay</button>
+            </div>
+            <pre class="code__body" aria-label="Code sample describing PwaStudio"><code id="codeTyping"></code><span class="code__caret" aria-hidden="true"></span></pre>
           </article>
 
           <article class="tile tile--approach" data-reveal>
             <span class="tile__icon" aria-hidden="true">✨</span>
             <h3>How I build</h3>
             <p class="muted">AI-assisted development and vibe coding — shipping working prototypes fast, then refining them with real users.</p>
+            <ul class="chips"><li>Firebase Auth</li><li>Firestore</li><li>Realtime DB</li><li>Storage</li><li>LocalStorage</li></ul>
           </article>
         </div>
+      </div>
+
+      <div class="skills-marquee" data-reveal aria-label="Skills">
+        <ul class="skills-row" id="skillsRowA"></ul>
+        <ul class="skills-row skills-row--reverse" id="skillsRowB" aria-hidden="true"></ul>
       </div>
     </section>
 
@@ -238,6 +274,7 @@
   </dialog>
 
   <script src="projects.js"></script>
+  <script src="skills.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
